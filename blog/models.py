@@ -10,7 +10,7 @@ class Category(models.Model):
     
 class Post(models.Model):
 
-    # When the Post class is queried using the Post.objects interface, only the published objects will be returned.
+    """When the Post class is queried using the Post.objects interface, only the published objects will be returned."""
     class PostObjects(models.Manager):
         def get_queryset(self):
             return super().get_queryset().filter(status='published')
